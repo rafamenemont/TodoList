@@ -28,9 +28,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleModal({deleteItem, one}) {
+export default function SimpleModal({deleteItem, addItem, setNewTask, one}) {
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
 
@@ -41,6 +40,12 @@ export default function SimpleModal({deleteItem, one}) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  async function restore (){
+      console.log(one)
+    await addItem(one); 
+    deleteItem(one);
+  }
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
@@ -53,7 +58,10 @@ export default function SimpleModal({deleteItem, one}) {
   );
 
   return (
-    <div>
+    <div style={{display: 'flex', justifyContent: 'flex-end' }}>
+
+        <button onClick={() => restore(one)}>Restaurar</button>
+
       <button type="button" onClick={handleOpen}>
         APAGAR
       </button>

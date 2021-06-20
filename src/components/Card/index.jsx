@@ -1,6 +1,6 @@
 import React from "react";
-import Modal from "@material-ui/core/Modal";
 import SimpleModal from "../ModalDelete";
+import { Container } from "./styles";
 
 const Card = ({
   one,
@@ -8,7 +8,7 @@ const Card = ({
   setCompleteds,
   completeds,
   setTasks,
-  tasks,
+  tasks, addItem, setNewTask
 }) => {
   const done = (one) => {
     setCompleteds([...completeds, one]);
@@ -29,16 +29,22 @@ const Card = ({
   };
 
   return (
-    <div style={{ minWidth: "100px", border: "1px #6A57B7 solid", borderRadius: "12px" }}>
-      <p>{one}</p>
+    <Container >
       {completed ? (
-         <SimpleModal deleteItem={deleteItem} completeds={completeds} one={one}/>
+          <div >
+          <p style={{ textDecoration: 'line-through 2px'}} >{one}</p>
+         <SimpleModal deleteItem={deleteItem} 
+         addItem={addItem} setNewTask={setNewTask} tasks={tasks} completeds={completeds} one={one}/>
+         </div>
       ) : (
+          <div>
+        <p>{one}</p>
         <button onClick={() => done(one)}>Finalizar</button>
+        </div>
       )}
 
      
-    </div>
+    </Container>
   );
 };
 
