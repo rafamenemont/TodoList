@@ -2,6 +2,7 @@
 
 Este projeto é um desafio proposto pela emprea Esparta que segue o escopo descrito abaixo.
 As tecnologias utilizadas foram React e Styled-components.
+O aplicativo pode ser acessado em http://todo-list-nine-steel.vercel.app/
 
 
 ### Desafio
