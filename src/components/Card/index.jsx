@@ -1,6 +1,8 @@
 import React from "react";
 import SimpleModal from "../ModalDelete";
 import { Container } from "./styles";
+import { BsCheckBox } from "@react-icons/all-files/bs/BsCheckBox";
+
 
 const Card = ({
   one,
@@ -39,7 +41,9 @@ const Card = ({
       ) : (
           <div>
         <p>{one}</p>
-        <button onClick={() => done(one)}>Finalizar</button>
+        <button onClick={() => done(one)}>
+        <BsCheckBox style={{fontSize: '30px' }}/>
+        </button>
         </div>
       )}
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+import { MdRestore } from "@react-icons/all-files/md/MdRestore";
+import { MdDelete } from "@react-icons/all-files/md/MdDelete";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -60,10 +62,12 @@ export default function SimpleModal({deleteItem, addItem, setNewTask, one}) {
   return (
     <div style={{display: 'flex', justifyContent: 'flex-end' }}>
 
-        <button onClick={() => restore(one)}>Restaurar</button>
+        <button onClick={() => restore(one)}>
+        <MdRestore style={{fontSize: '30px' }}/>
+            </button>
 
       <button type="button" onClick={handleOpen}>
-        APAGAR
+      <MdDelete style={{fontSize: '30px' }}/>
       </button>
       <Modal
         open={open}

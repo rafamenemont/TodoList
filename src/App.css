@@ -4,7 +4,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: whitesmoke;
@@ -17,10 +16,11 @@ p, div{
 
 input {
     border-radius: 5px;
-    min-width: 65%;
     padding: 5px;
     border: none;
     color: black;
+    width: 450px;
+    margin-left: 15px;
 }
 
 button {
@@ -29,4 +29,5 @@ button {
     border: none;
     color: whitesmoke;
     background-color: #025F70;
+    margin-right: 15px;
 }
